@@ -4,15 +4,23 @@ class LandingPage extends Component {
   constructor(props) {
     super(props); 
     this.state = {
-     recommendation: {}
+      recommendation: {},
+      genre:'fiction'
     };
   }
 
+  setGenre = (event) => {
+    this.setState({
+      genre: event.target.value 
+    })
+  }
+
   getRecommendation = () => {
-    fetch('http://localhost:8000/api/recommendation')
+    fetch(`http://localhost:8000/api/recommendation?genre=${this.state.genre}`)
     .then(response => response.json())
     .then(data => {
-      if(!this.state.recommendation.id){
+      console.log(data)
+      if(!this.state.recommendation.id || this.state.recommendation.id === data.length){
         const recommendation = data[0]; 
         this.setState({
           recommendation
@@ -40,8 +48,16 @@ class LandingPage extends Component {
           </p>
         </div>
         <div className="recommendation">
-          <Recommendation getRecommendation={this.getRecommendation} recommendation={this.state.recommendation}/>
+          <Recommendation 
+            getRecommendation={this.getRecommendation} recommendation={this.state.recommendation}
+            setGenre={this.setGenre}/>
           <button type="button" onClick={this.getRecommendation}>Get New Recommendation</button>
+          <select onChange={(event) => this.setGenre(event)}>
+            <option value="fiction">Fiction</option>
+            <option value="fantasy">Science Fiction/Fantasy</option>
+            <option value='literature'>Literature</option>
+            <option value='help'>Self-Help</option>
+          </select>
         </div>
         <div className="feature-one">
             Get recommendations based on genre with screenshot
