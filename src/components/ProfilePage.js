@@ -11,9 +11,12 @@ class ProfilePage extends Component {
   componentDidMount() {
     fetch('http://localhost:8000/api/recommendation')
     .then(response => response.json())
-    .then(recommendation => this.setState({
-      recommendation
-      })) 
+    .then(data => {
+      const recommendation = data[0]; 
+      this.setState({
+        recommendation
+      })
+    }) 
   }
 
   getRecommendation = () => {
