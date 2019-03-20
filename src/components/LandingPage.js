@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import Recommendation from './Recommendation'
 import './LandingPage.css'; 
-import { API_ENDPOINT } from '../config'
+import  API_ENDPOINT  from '../config'
 class LandingPage extends Component {
   constructor(props) {
     super(props); 
