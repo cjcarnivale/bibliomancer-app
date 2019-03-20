@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
-import Recommendation from './GetRecommendation'
+import Recommendation from './Recommendation'
+import './LandingPage.css'; 
 class LandingPage extends Component {
   constructor(props) {
     super(props); 
@@ -66,26 +67,29 @@ class LandingPage extends Component {
             :
             <Recommendation recommendation={this.state.recommendation[this.state.index]}/>
           }
+        </div>
 
-          <button type="button" onClick={this.browse}>Get New Recommendation</button>
+        <div className="button-container">  
           
-          <select onChange={(event) => this.getGenre(event.target.value)}>
+          <label htmlFor="select">Change Genre: </label>
+          <select id="select" onChange={(event) => this.getGenre(event.target.value)}>
             <option value="fiction">Fiction</option>
             <option value="fantasy">Science Fiction/Fantasy</option>
             <option value='literature'>Literature</option>
             <option value='help'>Self-Help</option>
           </select>
-        </div>
-
-        <div className="feature-one">
-            Get recommendations based on genre with screenshot
-        </div>
-        <div className="feature-two">
-            Track books completed and badges with screenshot
+        
+          <button type="button" onClick={this.browse}>Get New Recommendation</button>
+        
         </div>
       </div>
-    ) 
-  }
+      // <div className="feature-one">
+      //   Get recommendations based on genre with screenshot
+      // </div>
+      // <div className="feature-two">
+      //   Track books completed and badges with screenshot
+      // </div>
+    )}
 }
 
 export default LandingPage; 
