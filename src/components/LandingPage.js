@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import Recommendation from './Recommendation'
 import './LandingPage.css'; 
-import  API_ENDPOINT  from '../config'
+import  Config  from '../config'
 class LandingPage extends Component {
   constructor(props) {
     super(props); 
@@ -17,7 +17,7 @@ class LandingPage extends Component {
   }
 
   getGenre = (value) => {
-    fetch(`${API_ENDPOINT}/recommendation?genre=${value}`)
+    fetch(`${Config.API_ENDPOINT}/recommendation?genre=${value}`)
     .then(res => {
       if(res.ok) {
         return res.json(0)
