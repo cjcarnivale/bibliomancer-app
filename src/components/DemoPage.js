@@ -2,7 +2,16 @@ import React, { Component } from 'react';
 import SelectButton from './SelectButton'
 import Recommendation from './Recommendation'
 import Context from '../Context';
+import './DemoPage.css'; 
 class DemoPage extends Component {
+  constructor(props) {
+    super(props); 
+    this.state = {
+      currRec: [],
+      read: []
+    };
+  }
+
   
   static contextType = Context; 
 
@@ -10,12 +19,36 @@ class DemoPage extends Component {
     this.context.getGenre('fiction'); 
   }
 
+  handleSelectRec = () => {
+    this.setState({
+      currRec: [this.context.recommendation[this.context.index]]
+    })
+  }
+
+  handleChooseNew = () => {
+    this.setState({
+      currRec: []
+    })
+  }
+
+  handleRead = () =>{
+    this.setState({
+      read: [...this.state.read, this.state.currRec[0]]
+
+    })
+  }
+
   render(){
     return(
       <div>
         <h1>Demo Page</h1>
+        {(this.state.currRec.length === 0)
+          ?
+          <div></div>
+          :
+          <h2>Current Selected Recommendation</h2>
+        }
         <div className="current-recommendation">
-          <div className="recommendation">
           {
             (this.context.recommendation.length === 0) 
             ? 
@@ -24,15 +57,19 @@ class DemoPage extends Component {
             <Recommendation/>
           }
         </div>
-          <SelectButton />
-            <button type="submit" className="complete-button">Complete</button>
-            <button type="submit" className="get-another">Get New Recommendation</button>
-        </div>
-        <div className="books-completed">
-          Display books the user has marked as read with picture and title
-        </div>
-        <div className="badges">
-          Display badges the user has earned
+        <div>
+          {(this.state.currRec.length === 0)
+            ?
+            <div className="select-button">
+            <SelectButton />
+              <button onClick={this.handleSelectRec} type="button">Select Recommendation</button>
+            </div>
+            :
+            <div>
+              <button onClick={this.handleChooseNew} type="button">Choose New Recommendation</button>
+              <button onClick={this.handleRead} type="button">I Read It!</button> 
+            </div>
+            }
         </div>
       </div>
     ) 
