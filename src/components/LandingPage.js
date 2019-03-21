@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; 
+import { Link } from 'react-router-dom'
 import Recommendation from './Recommendation'
 import './LandingPage.css'; 
 import  Config  from '../config'
@@ -59,6 +60,11 @@ class LandingPage extends Component {
             provides recommendations for you to take the guesswork out of what to read next.  You will also be able to track the books
             you have read and when finished with one, receive another recommendation.  Start reading again, today!
           </p>
+          <div className="demo">
+            <Link to='/DemoPage'>
+              <button className="demo-button" type="button">Interactive Demo</button>
+            </Link>
+          </div>
         </div>
         <div className="recommendation">
           {
