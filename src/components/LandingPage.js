@@ -1,52 +1,15 @@
 import React, { Component } from 'react'; 
 import { Link } from 'react-router-dom'
 import Recommendation from './Recommendation'
+import SelectButton from './SelectButton'
 import './LandingPage.css'; 
-import  Config  from '../config'
+import Context from '../Context';
 class LandingPage extends Component {
-  constructor(props) {
-    super(props); 
-    this.state = {
-      recommendation: [],
-      error: null,
-      index: 0
-    };
-  }
+  
+  static contextType = Context; 
 
   componentDidMount(){
-    this.getGenre('fiction')
-  }
-
-  getGenre = (value) => {
-    fetch(`${Config.API_ENDPOINT}/recommendation?genre=${value}`)
-    .then(res => {
-      if(res.ok) {
-        return res.json(0)
-      }
-    })
-    .then(resJson => { 
-      this.setState({
-        recommendation: resJson,
-        index: 0
-      })
-    })
-    .catch (err => {
-      this.setState({
-        error: err.message
-      })
-    })
-  }
-
-  browse = () => {
-    if(this.state.index >= this.state.recommendation.length-1){
-      this.setState({
-        index:0
-      })
-    } else {
-      this.setState({
-        index: this.state.index + 1
-      })
-    }
+    this.context.getGenre('fiction'); 
   }
 
   render(){
@@ -68,34 +31,15 @@ class LandingPage extends Component {
         </div>
         <div className="recommendation">
           {
-            (this.state.recommendation.length === 0) 
+            (this.context.recommendation.length === 0) 
             ? 
             <div>Loading...</div> 
             :
-            <Recommendation recommendation={this.state.recommendation[this.state.index]}/>
+            <Recommendation/>
           }
         </div>
-
-        <div className="button-container">  
-          
-          <label htmlFor="select">Change Genre: </label>
-          <select id="select" onChange={(event) => this.getGenre(event.target.value)}>
-            <option value="fiction">Fiction</option>
-            <option value="fantasy">Science Fiction/Fantasy</option>
-            <option value='literature'>Literature</option>
-            <option value='help'>Self-Help</option>
-          </select>
-        
-          <button type="button" onClick={this.browse}>Get New Recommendation</button>
-        
-        </div>
+        <SelectButton />
       </div>
-      // <div className="feature-one">
-      //   Get recommendations based on genre with screenshot
-      // </div>
-      // <div className="feature-two">
-      //   Track books completed and badges with screenshot
-      // </div>
     )}
 }
 
