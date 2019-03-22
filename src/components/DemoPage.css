@@ -1,3 +1,22 @@
 .select-button{
   text-align: center
 }
+
+.book{
+  display: block; 
+  margin: 50px;  
+}
+
+img{
+  width: 5%; 
+}
+
+.read-list{
+  text-align: center;
+  display: inline;  
+}
+
+.button-container{
+  margin-top: 50px; 
+  text-align: center; 
+}

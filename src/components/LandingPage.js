@@ -35,7 +35,7 @@ class LandingPage extends Component {
             ? 
             <div>Loading...</div> 
             :
-            <Recommendation/>
+            <Recommendation />
           }
         </div>
         <SelectButton />

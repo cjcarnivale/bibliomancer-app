@@ -15,9 +15,23 @@ class App extends Component {
     super(props); 
     this.state = {
       recommendation: [],
+      read: [],
       error: null,
-      index: 0
+      index: 0,
+      currRec: []
     };
+  }
+
+  handleSelectRec = () => {
+    this.setState({
+      currRec: this.state.currRec.concat(this.state.recommendation[this.state.index])
+    })
+  }
+
+  handleChooseNew = () => {
+    this.setState({
+      currRec: []
+    })
   }
   
   getGenre =  (value) => {
@@ -27,11 +41,8 @@ class App extends Component {
         return res.json(0)
       }
     })
-    .then(resJson => { 
-      this.setState({
-        recommendation: resJson,
-        index: 0
-      })
+    .then(resJson => {
+      this.filterList(resJson, this.state.read)
     })
     .catch (err => {
       this.setState({
@@ -52,13 +63,42 @@ class App extends Component {
     }
   }
 
+  filterList = (recommendations, read) => {
+    if(read.length === 0){
+      this.setState({
+        recommendation: recommendations
+      })
+    }
+    else{
+      const unreadList = this.state.read.reduce((recs, read) => {
+        return recs.filter(rec => rec.id !== read.id)
+      }, this.state.recommendation) 
+      this.setState({
+        recommendation: unreadList
+      })
+    }
+  }
+
+  handleRead = () =>{ 
+    this.setState({
+      read: [...this.state.read, this.state.currRec[0]],
+    })
+    this.handleChooseNew()
+    this.getGenre('fiction');
+  }
+
   render(){
 
     const contextValue = {
       recommendation: this.state.recommendation,
       index: this.state.index, 
       getGenre: this.getGenre,
-      browse: this.browse 
+      browse: this.browse,  
+      read: this.state.read,
+      handleRead: this.handleRead,
+      handleSelectRec: this.handleSelectRec,
+      handleChooseNew: this.handleChooseNew,
+      currRec: this.state.currRec
     }
 
     return (

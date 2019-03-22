@@ -4,45 +4,20 @@ import Recommendation from './Recommendation'
 import Context from '../Context';
 import './DemoPage.css'; 
 class DemoPage extends Component {
-  constructor(props) {
-    super(props); 
-    this.state = {
-      currRec: [],
-      read: []
-    };
-  }
 
-  
   static contextType = Context; 
 
+
   componentDidMount(){
-    this.context.getGenre('fiction'); 
-  }
-
-  handleSelectRec = () => {
-    this.setState({
-      currRec: [this.context.recommendation[this.context.index]]
-    })
-  }
-
-  handleChooseNew = () => {
-    this.setState({
-      currRec: []
-    })
-  }
-
-  handleRead = () =>{
-    this.setState({
-      read: [...this.state.read, this.state.currRec[0]]
-
-    })
+    this.context.getGenre('fiction');
   }
 
   render(){
+
     return(
       <div>
         <h1>Demo Page</h1>
-        {(this.state.currRec.length === 0)
+        {(this.context.currRec.length === 0)
           ?
           <div></div>
           :
@@ -54,22 +29,39 @@ class DemoPage extends Component {
             ? 
             <div>Loading...</div> 
             :
-            <Recommendation/>
+            <Recommendation />
           }
         </div>
-        <div>
-          {(this.state.currRec.length === 0)
+        <div className="select-button">
+          {(this.context.currRec.length === 0)
             ?
-            <div className="select-button">
+            <div>
             <SelectButton />
-              <button onClick={this.handleSelectRec} type="button">Select Recommendation</button>
+              <button onClick={this.context.handleSelectRec} type="button">Select Recommendation</button>
             </div>
             :
-            <div>
-              <button onClick={this.handleChooseNew} type="button">Choose New Recommendation</button>
-              <button onClick={this.handleRead} type="button">I Read It!</button> 
+            <div className="selected-recommendation-buttons">
+              <button onClick={this.context.handleChooseNew} type="button">Choose New Recommendation</button>
+              <button onClick={this.context.handleRead} type="button">I Read It!</button> 
             </div>
             }
+        </div>
+        <div>
+          {(this.context.read.length === 0)
+            ?
+            <div></div>
+            :
+            <div className="read-list">
+              <h2>Completed Books</h2>
+              <hr/>
+              {this.context.read.map(book => 
+                <div className="book">
+                  <img src={book.image} alt='book cover' />
+                  <p>{book.title}</p>
+                </div>
+                )}
+            </div>
+          }
         </div>
       </div>
     ) 
