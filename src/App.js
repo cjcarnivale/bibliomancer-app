@@ -7,6 +7,7 @@ import DemoPage from './components/DemoPage';
 import NotFoundPage from './components/NotFoundPage'; 
 import Config from './config'
 import Context from './Context';
+import CommentsPage from './components/CommentsPage'
 class App extends Component {
   
   static contextType = Context
@@ -89,29 +90,16 @@ class App extends Component {
 
   render(){
 
-    const contextValue = {
-      recommendation: this.state.recommendation,
-      index: this.state.index, 
-      getGenre: this.getGenre,
-      browse: this.browse,  
-      read: this.state.read,
-      handleRead: this.handleRead,
-      handleSelectRec: this.handleSelectRec,
-      handleChooseNew: this.handleChooseNew,
-      currRec: this.state.currRec
-    }
-
     return (
       <main className='App'>
-      <Switch>
-        <Context.Provider value={contextValue}>
+        <Switch>
           <Route exact path='/' component={LandingPage}/>
           <Route path='/LoginPage' component={LoginPage}/>
           <Route path='/RegistrationPage' component={RegistrationPage}/>
           <Route path='/DemoPage' component={DemoPage}/>
-        </Context.Provider>
-        <Route component={NotFoundPage}/>
-      </Switch>
+          <Route path='/CommentsPage/:bookId' component={CommentsPage}/>
+          <Route component={NotFoundPage}/>
+        </Switch>
       </main>
     );
   }

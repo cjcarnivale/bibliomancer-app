@@ -2,69 +2,79 @@ import React, { Component } from 'react';
 import SelectButton from './SelectButton'
 import Recommendation from './Recommendation'
 import Context from '../Context';
+import { Link } from 'react-router-dom'
 import './DemoPage.css'; 
 class DemoPage extends Component {
 
   static contextType = Context; 
 
+  handleGenre = g => {
+    this.context.selectGenre(g.target.value);
+  };
 
-  componentDidMount(){
-    this.context.getGenre('fiction');
+  dropdown() {
+    const genres = Object.keys(this.context.genres);
+    const options = genres.map((val, i) => (
+      <option key={i} value={val}>
+        {val}
+      </option>
+    ));
+    return(
+      <div className="controls">
+        <select onChange={this.handleGenre}>{options}</select>
+        <button onClick={this.context.next}>Next</button>
+      </div>
+    );
+  }
+
+  current() {
+    const [preview] = this.context.current;
+    console.log(preview);
+    if (preview === undefined){
+      return (
+        <div className="selection empty">
+          <h3>
+            No Remaining Book in {this.context.genre} Genre.
+          </h3>
+        </div>
+      );
+    } else {
+      return (
+        <div className="selection">
+          <h2>{preview.title}</h2>
+          <h3>by {preview.author}</h3>
+          <img src={preview.image} alt="book cover"/>
+          <br />
+          <p>{preview.description}</p>
+          <button onClick={() => this.context.readIt(preview.id)}>
+            Read It
+          </button>
+        </div>
+      );
+    }
+  }
+
+  renderRead(){
+    const readBooks = this.context.read.map((val, i ) => (
+      <img key={i} src={val.image} alt="book cover" />
+    ));
+    return (
+      <div>
+        <h3>Read</h3>
+        <div className="read">{readBooks}</div>
+      </div>
+    );
   }
 
   render(){
-
-    return(
-      <div>
-        <h1>Demo Page</h1>
-        {(this.context.currRec.length === 0)
-          ?
-          <div></div>
-          :
-          <h2>Current Selected Recommendation</h2>
-        }
-        <div className="current-recommendation">
-          {
-            (this.context.recommendation.length === 0) 
-            ? 
-            <div>Loading...</div> 
-            :
-            <Recommendation />
-          }
-        </div>
-        <div className="select-button">
-          {(this.context.currRec.length === 0)
-            ?
-            <div>
-            <SelectButton />
-              <button onClick={this.context.handleSelectRec} type="button">Select Recommendation</button>
-            </div>
-            :
-            <div className="selected-recommendation-buttons">
-              <button onClick={this.context.handleChooseNew} type="button">Choose New Recommendation</button>
-              <button onClick={this.context.handleRead} type="button">I Read It!</button> 
-            </div>
-            }
-        </div>
-        <div>
-          {(this.context.read.length === 0)
-            ?
-            <div></div>
-            :
-            <div className="read-list">
-              <h2>Completed Books</h2>
-              <hr/>
-              {this.context.read.map(book => 
-                <div className="book">
-                  <img src={book.image} alt='book cover' />
-                  <p>{book.title}</p>
-                </div>
-                )}
-            </div>
-          }
-        </div>
+    return (
+      <div className="current">
+        {this.current()}
+        {this.dropdown()}
+        <hr />
+        {this.renderRead()}
       </div>
-    ) 
+    ); 
   }
 }
 
