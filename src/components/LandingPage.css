@@ -1,42 +1,37 @@
-.hero h1{
-  text-align: center;
-  font-size: 48px;  
+.hero{
+  text-align: center; 
+  line-height: 1.4em; 
 }
-
 
 .description{
-  width: 800px; 
-  margin: 0 auto; 
-  line-height: 32px; 
-  font-size: 20px; 
-  margin-bottom: 50px; 
+  text-align: left; 
 }
 
-#book-cover{
-  display: block;
-  margin-left: auto;
-  margin-right: auto; 
-  margin-top: 50px; 
-  margin-bottom:  25px;  
-  width: 8%;
-  
+.container{
+  padding: 10px; 
 }
 
-.book-details{
-  width: 600px; 
+.selection img {
+  width: 25%;
   margin: 0 auto;
-  list-style-type: none;  
+  display: block;  
 }
 
-.button-container{
-  margin-top: 50px; 
-  text-align: center; 
+.description {
+  line-height: 1.4em;
+  font-size: 1.1em;  
 }
 
-.demo{
-  text-align: center; 
+.controls{
+  display: flex; 
+  justify-content: center; 
 }
 
-.demo-button{
-  font-size: 20px; 
+body {
+  font-size: 1.4em; 
 }
+
+button{
+  font-size: 25px; 
+}
+
