@@ -21,15 +21,22 @@ class LandingPage extends Component {
               You will also be able to track the books you have read and when finished with one, receive another recommendation.</p>  
             <p>Start reading again, today!</p>
           </div>
-          <div className="demo-button-container">
-            <Link className="demo-page-link" to='/DemoPage'>
-              <button className="demo-button" type="button">Interactive Demo</button>
-            </Link>
-          </div>
         </div>
         <div className="recommendation">
+          <h2>Take a Look at Our Recommendations</h2>
+          <hr />
           <Recommendation showButton={false} />
           <SelectButton />
+        </div>
+        <div>
+          <h2>Choose a book to read and track what 
+            you have read in our interactive demo!
+          </h2>
+          <div className="demo-button-container">
+              <Link className="demo-page-link" to='/DemoPage'>
+                <button className="demo-button" type="button">Interactive Demo</button>
+              </Link>
+            </div>
         </div>
       </div>
     )}

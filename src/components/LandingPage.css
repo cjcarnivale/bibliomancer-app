@@ -13,6 +13,7 @@
 
 .selection img {
   width: 25%;
+  height: 200px; 
   margin: 0 auto;
   display: block;  
 }
@@ -32,6 +33,20 @@ body {
 }
 
 button{
+  font-size: 25px;
+}
+
+select{
   font-size: 25px; 
+}
+
+a{
+  text-decoration: none; 
+  color: black; 
+}
+
+.demo-button-container{
+  display: flex;
+  justify-content: center; 
 }
 

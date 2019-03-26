@@ -20,7 +20,7 @@ class SelectButton extends Component {
       return(
         <div className="controls">
           <select onChange={this.handleGenre}>{options}</select>
-          <button onClick={this.context.next}>Next Recommendation</button>
+          <button onClick={this.context.next}><a href="#title">New Book</a></button>
         </div>
       );
     }

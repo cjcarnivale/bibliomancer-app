@@ -1,5 +1,4 @@
 import React, { Component } from 'react'; 
-import SelectButton from './SelectButton'
 import Recommendation from './Recommendation'
 import Context from '../Context';
 // import './DemoPage.css'; 
