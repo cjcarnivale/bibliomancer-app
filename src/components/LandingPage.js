@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import Recommendation from './Recommendation'
 import SelectButton from './SelectButton'
-import './LandingPage.css'; 
 import Context from '../Context';
 class LandingPage extends Component {
   

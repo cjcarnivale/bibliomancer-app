@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Context from '../Context';
 import SelectButton from './SelectButton'
-import './DemoPage.css'
+
 class Recommendation extends Component{
   static contextType = Context; 
     
