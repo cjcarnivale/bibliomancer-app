@@ -19,7 +19,7 @@ class Recommendation extends Component{
   }
 
   render() {
-    const [preview] = this.context.current;
+    const preview = this.context.current[0];
     if (preview === undefined){
       return (
         <div className="selection empty">

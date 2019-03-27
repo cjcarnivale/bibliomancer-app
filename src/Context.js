@@ -125,7 +125,7 @@ export class BooksProvider extends Component {
       selectGenre: this.selectGenre,
       readIt: this.readIt,
       next: this.next,
-      read: this.state.read,
+      read: this.state.read
     };
     return(
       <Context.Provider value={pipe}>{this.props.children}</Context.Provider>

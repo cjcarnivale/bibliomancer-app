@@ -13,15 +13,16 @@ class App extends Component {
 
     return (
       <main className='App'>
-        <Switch>
-          <Route exact path='/' component={LandingPage}/>
-          <Route path='/LoginPage' component={LoginPage}/>
-          <Route path='/RegistrationPage' component={RegistrationPage}/>
-          <Route path='/DemoPage' component={DemoPage}/>
-          <Route path='/CommentsPage/:bookId' component={CommentsPage}/>
-          <Route component={NotFoundPage}/>
-        </Switch>
+          <Switch>
+            <Route exact path='/' component={LandingPage}/>
+            <Route path='/LoginPage' component={LoginPage}/>
+            <Route path='/RegistrationPage' component={RegistrationPage}/>
+            <Route path='/DemoPage' component={DemoPage}/>
+            <Route path='/CommentsPage/:bookId' component={CommentsPage}/>
+            <Route component={NotFoundPage}/>
+          </Switch>
       </main>
+      
     );
   }
 }
