@@ -20,11 +20,13 @@ class DemoPage extends Component {
 
   render(){
     return (
-      <div className="current">
-        <Recommendation showButton={true}/>
-        <hr />
-        {this.renderRead()}
-      </div>
+      <div className="container">
+        <div className="current">
+          <Recommendation showButton={true}/>
+          <hr />
+          {this.renderRead()}
+        </div>
+      </div>  
     ); 
   }
 }

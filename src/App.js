@@ -5,7 +5,8 @@ import LoginPage from './components/LoginPage';
 import RegistrationPage from './components/RegistrationPage';
 import DemoPage from './components/DemoPage'; 
 import NotFoundPage from './components/NotFoundPage'; 
-import CommentsPage from './components/CommentsPage'
+import CommentsPage from './components/CommentsPage';
+import './App.css';
 class App extends Component {
   
   render(){

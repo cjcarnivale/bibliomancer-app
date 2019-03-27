@@ -45,17 +45,17 @@ class Recommendation extends Component{
               <div>
                 <SelectButton />
                 <div className="read-this">
-                  <button onClick={this.handleReading}>
+                  <button id="read-this"onClick={this.handleReading}>
                     Read This
                   </button>
                 </div>
               </div>
               :
-              <div>
-                <button onClick={this.handleReading}>
+              <div className="selection-buttons">
+                <button id="different-selection" onClick={this.handleReading}>
                   Different Selection
                 </button>
-                <button onClick={() => {this.context.readIt(preview.id); this.handleReading()}}>
+                <button id="read-it" onClick={() => {this.context.readIt(preview.id); this.handleReading()}}>
                   <a href="#title">Read It!</a>
                 </button>
               </div>
