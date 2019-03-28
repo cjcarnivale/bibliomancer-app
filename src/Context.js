@@ -16,14 +16,22 @@ export class BooksProvider extends Component {
     allBooks: [],
     genres: {},
     genre: "Fiction",
-    error: 'false',
+    error: false,
     current: [],
     read: []
   };
 
   componentWillMount () {
     fetch(`${Config.API_ENDPOINT}/allbooks`)
-      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        if (!res.ok){
+          throw new Error(); 
+        }
+        else{
+        return res.json()
+        }
+      })
       .then(resJson => {
         this.setState(
           {
@@ -37,7 +45,7 @@ export class BooksProvider extends Component {
       .catch(err => {
         this.setState(
           {
-            error: err
+            error: true
           }
         );
       });
@@ -126,7 +134,8 @@ export class BooksProvider extends Component {
       selectGenre: this.selectGenre,
       readIt: this.readIt,
       next: this.next,
-      read: this.state.read
+      read: this.state.read,
+      error: this.state.error
     };
     return(
       <Context.Provider value={pipe}>{this.props.children}</Context.Provider>
