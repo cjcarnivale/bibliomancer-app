@@ -1,14 +1,127 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.hero{
+  text-align: center; 
+  line-height: 1.4em; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.description{
+  text-align: left; 
+}
+
+.container{
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 10vw;  
+  font-size: 1.4em;
+}
+
+.selection img {
+  width: 40vw; 
+  height: 40vw; 
+  margin: 0 auto;
+  display: block;  
+}
+
+.description {
+  line-height: 1.4em;
+  font-size: 1.1em;  
+}
+
+.controls{
+  display: flex; 
+  justify-content: center; 
+}
+
+body {
+  background-color: #E3DDA8
+}
+
+button{
+  font-size: 25px;
+  border-radius: 10px; 
+  padding: 5px; 
+}
+
+#new-book{
+  background-color: #FF7E40; 
+}
+
+select{
+  font-size: 25px;
+  background-color: #B0924E 
+}
+
+.controls a{
+  text-decoration: none; 
+  color: black; 
+}
+
+.demo-button-container{
+  display: flex;
+  justify-content: center; 
+}
+
+h1, h2, h3, h4{
+  font-family: 'Playfair Display', serif;
+}
+
+p{
+  font-family: 'Fauna One', serif;
+}
+
+#read-this{ 
+  background-color: #097E40;
+}
+
+.demo-button{
+  background-color: #64C3D9
+}
+
+#read-it{
+  color: white; 
+  background-color: #097E40;
+}
+
+#different-selection{
+  background-color: #FFBD2F 
+}
+
+.selection-buttons{
+  display: flex;
+  justify-content: center; 
+}
+
+.read-this{
+  margin-top: 20px; 
+  display: flex;
+  justify-content: center; 
+}
+
+.read img{
+  width: 40vw; 
+  height: 40vw;
+  margin-left: 10px;  
+}
+
+.selection-buttons a{
+  text-decoration: none; 
+  color: white; 
+}
+
+.error-container{
+  color: red; 
+  font-size: 50px; 
+}
+
+@media only screen and (min-width: 600px){
+  .selection img {
+    width: 20vw; 
+    height: 20vw; 
+    margin: 0 auto;
+    display: block;  
+  }
+  .read img{
+    width: 10vw; 
+    height: 10vw;
+    margin-left: 10px;  
+  }
 }

@@ -24,7 +24,6 @@ export class BooksProvider extends Component {
   componentWillMount () {
     fetch(`${Config.API_ENDPOINT}/allbooks`)
       .then(res => {
-        console.log(res)
         if (!res.ok){
           throw new Error(); 
         }

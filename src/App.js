@@ -4,7 +4,7 @@ import LandingPage from './components/LandingPage';
 import DemoPage from './components/DemoPage'; 
 import NotFoundPage from './components/NotFoundPage'; 
 import CommentsPage from './components/CommentsPage';
-import './App.css';
+import './index.css';
 class App extends Component {
   
   render(){
