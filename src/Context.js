@@ -8,6 +8,7 @@ const Context = React.createContext({
   genre: "Fiction",
   next: () => {},
   readIt: () => {},
+  current: []
 });
 
 export class BooksProvider extends Component {
