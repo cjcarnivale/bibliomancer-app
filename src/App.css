@@ -107,6 +107,11 @@ p{
   color: white; 
 }
 
+.error-container{
+  color: red; 
+  font-size: 50px; 
+}
+
 @media only screen and (min-width: 600px){
   .selection img {
     width: 20vw; 

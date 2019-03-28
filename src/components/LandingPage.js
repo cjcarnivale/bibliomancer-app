@@ -13,7 +13,7 @@ class LandingPage extends Component {
         {
         (this.context.error === true)
         ?
-        <div>Error! Something went wrong...</div>
+        <div className="error-container">OOPS! Something went wrong...</div>
         :
         <div className="container">
           <div className="hero">

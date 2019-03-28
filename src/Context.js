@@ -42,7 +42,7 @@ export class BooksProvider extends Component {
           }
         );
       })
-      .catch(err => {
+      .catch( () => {
         this.setState(
           {
             error: true
