@@ -8,6 +8,8 @@ unsure what to read.  It also tracks what books you have read from the recommend
 
 https://cjcarnivale-bibliomancer-app.now.sh
 
+### Screenshots
+![](images/LandingPage.png)
 
-## Technologies Used
+### Technologies Used
 HTML, CSS, Javascript, React

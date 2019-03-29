@@ -56,7 +56,7 @@ class Recommendation extends Component{
                   Different Selection
                 </button>
                 <button id="read-it" onClick={() => {this.context.readIt(preview.id); this.handleReading()}}>
-                  <a href="#title">Read It!</a>
+                  Read It!
                 </button>
               </div>
             :
