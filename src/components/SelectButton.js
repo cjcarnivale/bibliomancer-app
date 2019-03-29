@@ -17,10 +17,13 @@ class SelectButton extends Component {
 
       return(
         <div className="controls">
-          <select value={this.context.genre}onChange={this.handleGenre}>{options}</select>
+        <form>
+          <label htmlFor="select-genre">Select Genre: </label>
+            <select id="select-genre" value={this.context.genre}onChange={this.handleGenre}>{options}</select>
+        </form>
           {/* Disables the New Book button if all books in a genre have been read */}
           {(!this.props.disable)
-          ?<button id="new-book" onClick={this.context.next}>New Book</button>
+          ?<button id="new-book" onClick={this.context.next}><a href='#title'>New Book</a></button>
           :<div></div>}
         </div>
       );

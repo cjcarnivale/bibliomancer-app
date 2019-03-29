@@ -21,6 +21,7 @@ class DemoPage extends Component {
   render(){
     return (
       <div className="container">
+        <h1>Try It Out!</h1>
         <div className="current">
           <Recommendation showButton={true}/>
           <hr />
