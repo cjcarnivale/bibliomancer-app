@@ -26,6 +26,7 @@ class Recommendation extends Component{
           <h3>
             No Remaining Book in {this.context.genre} Genre.
           </h3>
+          <SelectButton disable="true"/>
         </div>
       );
     } else {

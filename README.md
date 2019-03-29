@@ -10,6 +10,7 @@ https://cjcarnivale-bibliomancer-app.now.sh
 
 ### Screenshots
 ![](images/LandingPage.png)
+![](images/ReadList.png)
 
 ### Technologies Used
 HTML, CSS, Javascript, React
