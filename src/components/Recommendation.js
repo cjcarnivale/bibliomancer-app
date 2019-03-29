@@ -38,12 +38,13 @@ class Recommendation extends Component{
           <br />
           <p className="description">{preview.description}</p>
           <div>
-          {
-          (this.props.showButton)
-            ?
-            (!this.state.reading)
-              ?
-              <div>
+          {/*Displays Read This button on Demo Page, but not the Landing Page  */}
+          {(this.props.showButton)
+          // Toggles buttons on and off depdning on if Read This has been clicked, effectively locking the UI 
+          //into displaying the user's current selection
+            ?(!this.state.reading)
+              //if reading is false, display the approprate selection buttons
+              ?<div>
                 <SelectButton />
                 <div className="read-this">
                   <button id="read-this"onClick={this.handleReading}>
@@ -51,8 +52,8 @@ class Recommendation extends Component{
                   </button>
                 </div>
               </div>
-              :
-              <div className="selection-buttons">
+              //if reading is true, display Different Selection and Read This
+              :<div className="selection-buttons">
                 <button id="different-selection" onClick={this.handleReading}>
                   Different Selection
                 </button>

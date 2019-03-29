@@ -6,10 +6,6 @@ class DemoPage extends Component {
 
   static contextType = Context; 
 
-  componentDidMount(){
-    window.scrollTo(0,0); 
-  }
-
   renderRead(){
     const readBooks = this.context.read.map((val, i ) => (
       <img key={i} src={val.image} alt="book cover" />

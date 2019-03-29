@@ -9,17 +9,16 @@ class SelectButton extends Component {
   };
 
   render(){
-  
     const genres = Object.keys(this.context.genres);
     const options = genres.map((val, i) => (
       <option key={i} value={val}>
         {val}
-      </option>
-    ));
+      </option>));
 
       return(
         <div className="controls">
           <select value={this.context.genre}onChange={this.handleGenre}>{options}</select>
+          {/* Disables the New Book button if all books in a genre have been read */}
           {(!this.props.disable)
           ?<button id="new-book" onClick={this.context.next}>New Book</button>
           :<div></div>}
