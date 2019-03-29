@@ -64,7 +64,8 @@ export class BooksProvider extends Component {
   setSelectedGenre () {
     this.setState({
       current: this.state.genres[this.state.genre]
-    });
+      },
+    );
   };
 
   readIt = id => {
