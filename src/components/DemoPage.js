@@ -15,8 +15,8 @@ class DemoPage extends Component {
       <img key={i} src={val.image} alt="book cover" />
     ));
     return (
-      <div>
-        <h3>Read</h3>
+      <div className="completed-books">
+        <h3>Books You Have Completed</h3>
         <div className="read">{readBooks}</div>
       </div>
     );
@@ -28,7 +28,6 @@ class DemoPage extends Component {
         <h1>Try It Out!</h1>
         <div className="current">
           <Recommendation showButton={true}/>
-          <hr />
           {this.renderRead()}
         </div>
       </div>  

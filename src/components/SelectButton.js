@@ -23,7 +23,7 @@ class SelectButton extends Component {
         </form>
           {/* Disables the New Book button if all books in a genre have been read */}
           {(!this.props.disable)
-          ?<button id="new-book" onClick={this.context.next}><a href='#title'>New Book</a></button>
+          ?<button id="new-book" onClick={this.context.next}><a href='#title'>See Another Selection</a></button>
           :<div></div>}
         </div>
       );

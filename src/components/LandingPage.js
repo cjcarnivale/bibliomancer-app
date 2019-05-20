@@ -26,11 +26,10 @@ class LandingPage extends Component {
             </div>
             <div className="recommendation">
               <h2>Take a Look at Our Recommendations</h2>
-              <hr />
               <Recommendation showButton={false} />
               <SelectButton />
             </div>
-            <div>
+            <div className="interactive-demo">
               <h2>Choose a book to read and track what 
                 you have read in our interactive demo!
               </h2>

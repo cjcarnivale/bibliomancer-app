@@ -35,7 +35,6 @@ class Recommendation extends Component{
           <h3 id="title">{preview.title}</h3>
           <h4>by {preview.author}</h4>
           <img src={preview.image} alt="book cover"/>
-          <br />
           <p className="description">{preview.description}</p>
           <div>
           {/*Displays Read This button on Demo Page, but not the Landing Page  */}
@@ -44,21 +43,21 @@ class Recommendation extends Component{
           //into displaying the user's current selection
             ?(!this.state.reading)
               //if reading is false, display the approprate selection buttons
-              ?<div>
+              ?<div className="recommendations-controls-container">
                 <SelectButton />
                 <div className="read-this">
                   <button id="read-this"onClick={this.handleReading}>
-                    Read This
+                    Read This Book
                   </button>
                 </div>
               </div>
               //if reading is true, display Different Selection and Read This
               :<div className="selection-buttons">
                 <button id="different-selection" onClick={this.handleReading}>
-                  Different Selection
+                  Choose A Different Selection
                 </button>
                 <button id="read-it" onClick={() => {this.context.readIt(preview.id); this.handleReading()}}>
-                  <a href="#title">Read It!</a>
+                  <a href="#title">Finished It!</a>
                 </button>
               </div>
             :
