@@ -4,6 +4,172 @@ exports[`Render all components renders App as expected 1`] = `
 <main
   className="App"
 >
+  <div>
+    <div
+      className="container"
+    >
+      <div
+        className="hero"
+      >
+        <h1>
+          Bibliomancer
+        </h1>
+        <div
+          className="description"
+        >
+          <p>
+            Are you ever stuck knowing that you want to read SOMETHING, but can't decide on what? 
+          </p>
+          <p>
+            Do your interests include Fiction, Science Fiction/Fantasy, Classic Literature, or Self-Help? If so, this is the place for you.
+          </p>
+          <p>
+            Bibliomancer provides recommendations for you to take the guesswork out of what to read next. You will also be able to track the books you have read and when finished with one, receive another recommendation.
+          </p>
+          <p>
+            Start reading again, today!
+          </p>
+        </div>
+      </div>
+      <div
+        className="recommendation"
+      >
+        <h2>
+          Take a Look at Our Recommendations
+        </h2>
+        <div
+          className="selection empty"
+        >
+          <h3>
+            No Remaining Book in 
+            Fiction
+             Genre.
+          </h3>
+          <div
+            className="controls"
+          >
+            <form>
+              <label
+                htmlFor="select-genre"
+              >
+                Select Genre: 
+              </label>
+              <select
+                id="select-genre"
+                onChange={[Function]}
+                value="Fiction"
+              />
+            </form>
+            <div />
+          </div>
+        </div>
+        <div
+          className="controls"
+        >
+          <form>
+            <label
+              htmlFor="select-genre"
+            >
+              Select Genre: 
+            </label>
+            <select
+              id="select-genre"
+              onChange={[Function]}
+              value="Fiction"
+            />
+          </form>
+          <button
+            id="new-book"
+            onClick={[Function]}
+          >
+            <a
+              href="#title"
+            >
+              See Another Selection
+            </a>
+          </button>
+        </div>
+      </div>
+      <div
+        className="interactive-demo"
+      >
+        <h2>
+          Choose a book to read and track what you have read in our interactive demo!
+        </h2>
+        <div
+          className="demo-button-container"
+        >
+          <a
+            className="demo-page-link"
+            href="/DemoPage"
+            onClick={[Function]}
+          >
+            <button
+              className="demo-button"
+              type="button"
+            >
+              Interactive Demo
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Render all components renders Demo Page as expected 1`] = `
+<div
+  className="container"
+>
+  <h1>
+    Try It Out!
+  </h1>
+  <div
+    className="current"
+  >
+    <div
+      className="selection empty"
+    >
+      <h3>
+        No Remaining Book in 
+        Fiction
+         Genre.
+      </h3>
+      <div
+        className="controls"
+      >
+        <form>
+          <label
+            htmlFor="select-genre"
+          >
+            Select Genre: 
+          </label>
+          <select
+            id="select-genre"
+            onChange={[Function]}
+            value="Fiction"
+          />
+        </form>
+        <div />
+      </div>
+    </div>
+    <div
+      className="completed-books"
+    >
+      <h3>
+        Books You Have Completed
+      </h3>
+      <div
+        className="read"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render all components renders Landing Page as expected 1`] = `
+<div>
   <div
     className="container"
   >
@@ -36,7 +202,6 @@ exports[`Render all components renders App as expected 1`] = `
       <h2>
         Take a Look at Our Recommendations
       </h2>
-      <hr />
       <div
         className="selection empty"
       >
@@ -45,13 +210,39 @@ exports[`Render all components renders App as expected 1`] = `
           Fiction
            Genre.
         </h3>
+        <div
+          className="controls"
+        >
+          <form>
+            <label
+              htmlFor="select-genre"
+            >
+              Select Genre: 
+            </label>
+            <select
+              id="select-genre"
+              onChange={[Function]}
+              value="Fiction"
+            />
+          </form>
+          <div />
+        </div>
       </div>
       <div
         className="controls"
       >
-        <select
-          onChange={[Function]}
-        />
+        <form>
+          <label
+            htmlFor="select-genre"
+          >
+            Select Genre: 
+          </label>
+          <select
+            id="select-genre"
+            onChange={[Function]}
+            value="Fiction"
+          />
+        </form>
         <button
           id="new-book"
           onClick={[Function]}
@@ -59,12 +250,14 @@ exports[`Render all components renders App as expected 1`] = `
           <a
             href="#title"
           >
-            New Book
+            See Another Selection
           </a>
         </button>
       </div>
     </div>
-    <div>
+    <div
+      className="interactive-demo"
+    >
       <h2>
         Choose a book to read and track what you have read in our interactive demo!
       </h2>
@@ -84,120 +277,6 @@ exports[`Render all components renders App as expected 1`] = `
           </button>
         </a>
       </div>
-    </div>
-  </div>
-</main>
-`;
-
-exports[`Render all components renders Demo Page as expected 1`] = `
-<div
-  className="container"
->
-  <div
-    className="current"
-  >
-    <div
-      className="selection empty"
-    >
-      <h3>
-        No Remaining Book in 
-        Fiction
-         Genre.
-      </h3>
-    </div>
-    <hr />
-    <div>
-      <h3>
-        Read
-      </h3>
-      <div
-        className="read"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Render all components renders Landing Page as expected 1`] = `
-<div
-  className="container"
->
-  <div
-    className="hero"
-  >
-    <h1>
-      Bibliomancer
-    </h1>
-    <div
-      className="description"
-    >
-      <p>
-        Are you ever stuck knowing that you want to read SOMETHING, but can't decide on what? 
-      </p>
-      <p>
-        Do your interests include Fiction, Science Fiction/Fantasy, Classic Literature, or Self-Help? If so, this is the place for you.
-      </p>
-      <p>
-        Bibliomancer provides recommendations for you to take the guesswork out of what to read next. You will also be able to track the books you have read and when finished with one, receive another recommendation.
-      </p>
-      <p>
-        Start reading again, today!
-      </p>
-    </div>
-  </div>
-  <div
-    className="recommendation"
-  >
-    <h2>
-      Take a Look at Our Recommendations
-    </h2>
-    <hr />
-    <div
-      className="selection empty"
-    >
-      <h3>
-        No Remaining Book in 
-        Fiction
-         Genre.
-      </h3>
-    </div>
-    <div
-      className="controls"
-    >
-      <select
-        onChange={[Function]}
-      />
-      <button
-        id="new-book"
-        onClick={[Function]}
-      >
-        <a
-          href="#title"
-        >
-          New Book
-        </a>
-      </button>
-    </div>
-  </div>
-  <div>
-    <h2>
-      Choose a book to read and track what you have read in our interactive demo!
-    </h2>
-    <div
-      className="demo-button-container"
-    >
-      <a
-        className="demo-page-link"
-        href="/DemoPage"
-        onClick={[Function]}
-      >
-        <button
-          className="demo-button"
-          type="button"
-        >
-          Interactive Demo
-        </button>
-      </a>
     </div>
   </div>
 </div>
@@ -220,6 +299,23 @@ exports[`Render all components renders Recommendation as expected 1`] = `
     Fiction
      Genre.
   </h3>
+  <div
+    className="controls"
+  >
+    <form>
+      <label
+        htmlFor="select-genre"
+      >
+        Select Genre: 
+      </label>
+      <select
+        id="select-genre"
+        onChange={[Function]}
+        value="Fiction"
+      />
+    </form>
+    <div />
+  </div>
 </div>
 `;
 
@@ -227,9 +323,18 @@ exports[`Render all components renders SelectButton as expected 1`] = `
 <div
   className="controls"
 >
-  <select
-    onChange={[Function]}
-  />
+  <form>
+    <label
+      htmlFor="select-genre"
+    >
+      Select Genre: 
+    </label>
+    <select
+      id="select-genre"
+      onChange={[Function]}
+      value="Fiction"
+    />
+  </form>
   <button
     id="new-book"
     onClick={[Function]}
@@ -237,7 +342,7 @@ exports[`Render all components renders SelectButton as expected 1`] = `
     <a
       href="#title"
     >
-      New Book
+      See Another Selection
     </a>
   </button>
 </div>

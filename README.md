@@ -1,28 +1,43 @@
 # Bibliomancer
 
-Bibliomancer provides recommendations for books to read based on a selected genre.<br>  
-It is for those undecisive people that want to read, but are<br>
-unsure what to read.  It also tracks what books you have read from the recommendations given.<br>
+Chris Carnivale
 
-## Link to the Client
+[Live App](https://cjcarnivale-bibliomancer-app.now.sh)
+[Server Repo](https://github.com/cjcarnivale/bibliomancer-api)
 
-https://cjcarnivale-bibliomancer-app.now.sh
+## Summary
+Bibliomancer provides recommendations for books to read based on a selected genre. It is for those undecisive people that want to read, but are unsure what to read.  It also tracks what books you have read from the recommendations given.
 
-### Screenshots
-![](images/LandingPage.png)
-![](images/ReadList.png)
+## Pages
 
-### Technologies Used
-HTML, CSS, Javascript, React
+#### Landing Page
+![Landing Page](images/LandingPage.png)
 
-Hi Christopher, Christopher Bradford from the grading team here!
+Provides a description of what the app does and who it is for
 
-You've done a great job so far. There are a few refinements that will be necessary to get this one approved.
+Allows the user to test the functionality of the recommendations system
 
-You'll need to include a favicon for your app; currently it's displaying the default React one.
 
-You're styling is extremely simple and is not engaging. Take a moment to look at similar sites that you enjoy or where inspired by, and use the design guidelines to make your app more visually engaging.
+#### Demo Page
+![Demo Page](images/ReadList.png)
 
-Your readme's are OK, but could be better -- please read the following article about writing great readme's and take some inspiration to refine yours. https://medium.com/@meakaakka/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3
+Allows the user to test the functionality of the recommendations system
 
-Great to see you have well written tests, and also clean code. Your app functions well and presents no errors in the console. Get those things above addressed and you'll be ready to go!
+Allows the user to test the functionality of keeping track of books they have marked as read
+
+## Technology 
+- HTML 
+- CSS 
+- Javascript 
+- React
+
+## Setup
+1. Fork and clone the project to your machine
+2. `npm install`
+3. Start Server
+4. `npm start`
+
+## Tests
+1. `npm test`
+
+
